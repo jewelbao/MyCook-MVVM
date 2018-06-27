@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">我菜</string>
+
+    <string name="navigation_drawer_open">打开导航菜单</string>
+    <string name="navigation_drawer_close">关闭导航菜单</string>
+
+    <string name="home">首页</string>
+
+    <string name="summary">小编总结：%s</string>
+
+    <string name="press_again_exit">再按一次退出</string>
+    <string name="email">开发者：443070891@qq.com</string>
+    <string name="check_update">检查更新</string>
+</resources>

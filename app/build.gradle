@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+bugly {
+    appId = '0ec515cfc7' // 注册时分配的App ID
+    appKey = '0323d2dc-c03e-4160-bab9-ffdf1de7a2f0' // 注册时分配的App Key
+    debug = true
+}
+
+android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.jewel.cooker"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 2
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('D:\\AllProject\\Jewel\\jewel.jks')
+            storePassword 'jewelbao@200706#'
+            keyAlias 'jewel'
+            keyPassword 'jewelbao@200706#'
+        }
+    }
+
+    buildTypes {
+        debug {
+            zipAlignEnabled true    // 启用zipAlign
+            debuggable true        // 保留debug信息
+            shrinkResources true    // 移除无用的resource文件
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            zipAlignEnabled true    // 启用zipAlign
+            debuggable false        // 保留debug信息
+            shrinkResources true    // 移除无用的resource文件
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':core')
+    implementation project(':model')
+    implementation project(':components')
+
+    implementation lib.lifecycle.runtime
+    implementation lib.lifecycle.extensions
+    annotationProcessor lib.lifecycle.compiler
+
+    implementation (lib.support.guava) {
+        exclude group: "com.google.code.findbugs"
+    }
+
+    implementation(lib.support.constraint) {
+        exclude group: "com.android.support"
+    }
+    testImplementation lib.test.junit
+    androidTestImplementation lib.test.runner
+    androidTestImplementation lib.test.espresso
+    // butterknife
+    implementation(lib.butterknife.core) {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor(lib.butterknife.compiler) {
+        exclude group: "com.android.support"
+    }
+    // glide
+    implementation(lib.glide.core) {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor(lib.glide.compiler) {
+        exclude group: "com.android.support"
+    }
+
+    implementation(lib.lottie) {
+        exclude group: "com.android.support"
+    }
+
+    implementation(lib.crash.crashreport_upgrade) {
+        exclude group: "com.android.support"
+    }
+    implementation(lib.crash.nativecrashreport) {
+        exclude group: "com.android.support"
+    }
+}

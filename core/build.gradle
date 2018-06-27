@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api lib.support.design
+    api lib.support.v7
+    api lib.support.v4
+    api lib.support.recyclerview
+    testImplementation lib.test.junit
+    androidTestImplementation lib.test.runner
+    androidTestImplementation lib.test.espresso
+    // Activity+Fragment管理
+    api(lib.fragmentation.core) {
+        exclude group: "com.android.support"
+    }
+    api(lib.fragmentation.swipeback) {
+        exclude group: "com.android.support"
+    }
+    // log日志
+    api(lib.log) {
+        exclude group: "com.android.support"
+    }
+    // 工具集合
+    api(lib.utilcode) {
+        exclude group: "com.android.support"
+    }
+    // adapter
+    api(lib.baseRecyclerViewAdapterHelper) {
+        exclude group: "com.android.support"
+    }
+}

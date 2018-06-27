@@ -1,0 +1,105 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation lib.test.junit
+    androidTestImplementation lib.test.runner
+    androidTestImplementation lib.test.espresso
+
+    implementation lib.support.design
+    implementation lib.support.v7
+    implementation lib.support.v4
+    implementation lib.support.recyclerview
+    implementation(lib.support.constraint) {
+        exclude group: "com.android.support"
+    }
+
+    implementation lib.lifecycle.runtime
+    implementation lib.lifecycle.extensions
+    annotationProcessor lib.lifecycle.compiler
+
+    // log日志
+    implementation(lib.log) {
+        exclude group: "com.android.support"
+    }
+    // 工具集合
+    implementation(lib.utilcode) {
+        exclude group: "com.android.support"
+    }
+
+    implementation (lib.support.guava) {
+        exclude group: "com.google.code.findbugs"
+    }
+
+    // butterknife
+    implementation(lib.butterknife.core) {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor(lib.butterknife.compiler) {
+        exclude group: "com.android.support"
+    }
+    // glide
+    implementation(lib.glide.core) {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor(lib.glide.compiler) {
+        exclude group: "com.android.support"
+    }
+
+    implementation(lib.lottie) {
+        exclude group: "com.android.support"
+    }
+
+    implementation(lib.crash.crashreport_upgrade) {
+        exclude group: "com.android.support"
+    }
+    implementation(lib.crash.nativecrashreport) {
+        exclude group: "com.android.support"
+    }
+
+    // 网络请求
+    implementation(lib.http) {
+        exclude group: "com.android.support"
+    }
+    implementation(lib.http) {
+        exclude group: "com.android.support"
+    }
+    // json
+    implementation(lib.json) {
+        exclude group: "com.android.support"
+    }
+    implementation lib.greendao // add library
+
+    // 实体注解
+//    compileOnly(lib.lombok) {
+//        exclude group: "com.android.support"
+//    }
+//    annotationProcessor(lib.lombok) {
+//        exclude group: "com.android.support"
+//    }
+}
