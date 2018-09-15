@@ -13,10 +13,18 @@ import com.jewel.mvvm.live.LoadingEvent;
  * @since 2018/06/19
  */
 public class BaseViewModel extends AndroidViewModel {
-
-    private final LoadingEvent loadingEvent = new LoadingEvent();  // 是否显示正在加载中UI
-    private final ObservableBoolean isEmptyDataSource = new ObservableBoolean(false); // 是否得到空数据
-    private final ObservableBoolean isDataLoadingError = new ObservableBoolean(false); // 是否获取数据失败
+    /**
+     * 是否显示正在加载中UI
+     */
+    private final LoadingEvent loadingEvent = new LoadingEvent();
+    /**
+     * 是否得到空数据
+     */
+    private final ObservableBoolean isEmptyDataSource = new ObservableBoolean(false);
+    /**
+     * 是否获取数据失败
+     */
+    private final ObservableBoolean isDataLoadingError = new ObservableBoolean(false);
 
     BaseViewModel(@NonNull Application application) {
         super(application);

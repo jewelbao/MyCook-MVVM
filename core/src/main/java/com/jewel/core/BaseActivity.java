@@ -51,10 +51,6 @@ public abstract class BaseActivity extends SupportActivity {
         decorView.addView(progressBar);
         progressBar.setVisibility(View.GONE);
 
-        Application application = getApplication();
-        WindowManager windowManager = (WindowManager) application.getSystemService(WINDOW_SERVICE);
-        windowManager.addView(progressBar, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-
         initView();
         getData();
     }

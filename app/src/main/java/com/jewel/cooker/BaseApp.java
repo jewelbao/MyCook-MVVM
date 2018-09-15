@@ -60,7 +60,7 @@ public class BaseApp extends Application {
         initCrash();
         initDatabase();
         initHttp();
-//        initFragmentManager();
+        initFragmentManager();
         initLogger();
         Utils.init(this);
     }
@@ -153,7 +153,7 @@ public class BaseApp extends Application {
         Fragmentation.builder()
                 // 显示悬浮球 ; 其他Mode:SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.NONE)
-                .debug(BuildConfig.DEBUG)
+                .debug(false)
                 .install();
     }
 

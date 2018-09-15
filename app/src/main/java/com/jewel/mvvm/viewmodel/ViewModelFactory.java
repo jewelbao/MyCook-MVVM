@@ -17,7 +17,6 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private static volatile ViewModelFactory INSTANCE;
 
     private Application application;
-    private DataSource dataSource;
 
     public static ViewModelFactory getInstance(Application application) {
         if(INSTANCE == null) {

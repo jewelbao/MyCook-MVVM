@@ -134,7 +134,6 @@ public class MainActivity extends BaseActivity implements BaseQuickAdapter.OnIte
         switch (view.getId()) {
             case R.id.tv_update:
                 Beta.checkUpgrade(true, false);
-                closeMenu(() -> start(FavoriteFragment.newInstance()));
                 break;
             case R.id.tv_share:
                 break;

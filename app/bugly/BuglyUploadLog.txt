@@ -110,3 +110,23 @@ file=D:\AllProject\Jewel\A\MyCook\app\build\outputs\mapping\debug\mapping.txt
 sha1=af644d4b47ecced2112c8f4aace2cd1d3a9d0bf8
 appId=0ec515cfc7
 
+file=C:\dev\project\kevin\MyCook-MVVM\app\build\outputs\mapping\debug\mapping.txt
+sha1=edeef6e4dcdb9d92d49020ca7226021029a8ed4f
+appId=0ec515cfc7
+
+file=C:\dev\project\kevin\MyCook-MVVM\app\build\outputs\mapping\debug\mapping.txt
+sha1=edeef6e4dcdb9d92d49020ca7226021029a8ed4f
+appId=0ec515cfc7
+
+file=C:\dev\project\kevin\MyCook-MVVM\app\build\outputs\mapping\debug\mapping.txt
+sha1=8b727fa6b0d7e1c82daa3381246ca7695bb5fe24
+appId=0ec515cfc7
+
+file=C:\dev\project\kevin\MyCook-MVVM\app\build\outputs\mapping\debug\mapping.txt
+sha1=17d833febe91f3a194e1992c8c2d49d978fb02db
+appId=0ec515cfc7
+
+file=C:\dev\project\kevin\MyCook-MVVM\app\build\outputs\mapping\debug\mapping.txt
+sha1=17d833febe91f3a194e1992c8c2d49d978fb02db
+appId=0ec515cfc7
+

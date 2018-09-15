@@ -37,10 +37,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('D:\\AllProject\\Jewel\\jewel.jks')
-            storePassword 'jewelbao@200706#'
-            keyAlias 'jewel'
-            keyPassword 'jewelbao@200706#'
+            storeFile file('C:/dev/project/kevin/kevin.jks')
+            storePassword '123456'
+            keyAlias 'kevin'
+            keyPassword '123456'
         }
     }
 
@@ -74,15 +74,12 @@ dependencies {
     implementation project(':core')
     implementation project(':model')
     implementation project(':components')
-
     implementation lib.lifecycle.runtime
     implementation lib.lifecycle.extensions
     annotationProcessor lib.lifecycle.compiler
-
-    implementation (lib.support.guava) {
+    implementation(lib.support.guava) {
         exclude group: "com.google.code.findbugs"
     }
-
     implementation(lib.support.constraint) {
         exclude group: "com.android.support"
     }
@@ -103,11 +100,9 @@ dependencies {
     annotationProcessor(lib.glide.compiler) {
         exclude group: "com.android.support"
     }
-
     implementation(lib.lottie) {
         exclude group: "com.android.support"
     }
-
     implementation(lib.crash.crashreport_upgrade) {
         exclude group: "com.android.support"
     }
